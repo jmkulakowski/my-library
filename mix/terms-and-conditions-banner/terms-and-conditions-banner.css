@@ -1,0 +1,43 @@
+/**-----------------------------------------*
+ * Phone Not Working/Down Banner
+ *------------------------------------------*/
+#terms-and-conditions-banner {
+	display: none; /* hide banner by default- revealed after cookie check */
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	font-family: inherit;
+	font-weight: 400;
+	background: #1bb793;
+	z-index: 99999;
+}
+#terms-and-conditions-banner .btn-close,
+#terms-and-conditions-banner .btn-close:focus,
+#terms-and-conditions-banner .btn-close:active {
+	font-weight: 600;
+	margin-left: 15px;
+    color: #ffffffaa;
+    background: none;
+    border: 1px solid #ffffffaa;
+    outline: none;
+}
+#terms-and-conditions-banner .btn-close:hover {
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+#terms-and-conditions-banner p {
+	max-width: 75%;
+	font-size: 18px;
+	line-height: 30px;
+	text-align: center;
+	margin: 0 auto;
+	padding: 15px;
+	color: #fff;
+}
+#terms-and-conditions-banner a {
+	color: #ffffffaa;
+}
+#terms-and-conditions-banner a:hover {
+	color: #fff;
+}
