@@ -23,7 +23,7 @@ Create a ```div``` container with any class you would like as well as a child ``
 
 ```
 <div class="image-container">
-	<img src="img/some-image.pmg" alt="Some Image" />
+	<img src="img/some-image.png" alt="Some Image" />
 </div>
 ```
 
