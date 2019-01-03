@@ -2,7 +2,7 @@
 
 A javascript class that automatically sets the height of inline images based on its width and a given ratio.
 
-[demo usage](https://jmkulakowski.github.io/my-library/dynamic-images-by-ratio/)
+<a href="https://jmkulakowski.github.io/my-library/dynamic-images-by-ratio/" target="_blank">demo usage</a>
 
 *** **NOTE** ***
 *The class is currently only built to handle image containers that have widths higher than, or equal to, their heights. In other words, a 4:5 ratio would not be supported, but a 5:4 ratio would be. Equal widths and heights are also supported (i.e. 1:1).*
