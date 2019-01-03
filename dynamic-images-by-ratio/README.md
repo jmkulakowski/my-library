@@ -1,8 +1,8 @@
-# Project Title
+# Dynamic Images By Ratio
 
 A javascript class that automatically sets the height of image containers when a `cover` style effect is needed with an inline img element. Uses a given ratio to set height dynamically based on image width.
 
-## Demo
+[demo usage](https://jmkulakowski.github.io/my-library/dynamic-images-by-ratio/)
 
 ## Installation
 
