@@ -1,8 +1,8 @@
 /**
  * Dynamic Images By Ratio
  * -------------------------
- * A javascript class that automatically sets the height of inline images
- * based on its width and a given ratio.
+ * A javascript class that allows the user to automatically set the height of
+ * inline images based on their widths and a given ratio.
  */ 
 function DynamicImagesByRatio(options) {
 
