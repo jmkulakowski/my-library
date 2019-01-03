@@ -4,6 +4,9 @@ A javascript class that automatically sets the height of image containers when a
 
 [demo usage](https://jmkulakowski.github.io/my-library/dynamic-images-by-ratio/)
 
+*** **NOTE** ***
+*The class is currently only built to handle image containers that have widths higher than, or equal to, their heights. In other words, a 4:5 ratio would not be supported, but a 5:4 ratio would be. Equal widths and heights are also supported (i.e. 1:1).*
+
 ## Installation
 
 Include the DynamicImagesByRatio.js class file somewhere within your HTML page. I recommend either loading this in the ```<head>``` of the document, or after the ```<footer>```.
@@ -56,9 +59,6 @@ Lastly, add some CSS to the ```head``` of your document, or within an external s
 </style>
 ```
 *** **IMPORTANT NOTE** *** It's critical that the image container's display property is set to "relative" and that your image has a set width. The child image within the container will be absolutely positioned and the image container's height will be resized based on the child image's width.
-
-## Other Notes
-The class is currently only built to handle image container ratios that include a width that is higher than, or equal to, its height. In other words, a 4:5 ratio would not be supported, but a 5:4 ratio would be. Equal widths and heights are also supported (i.e. 1:1).
 
 ## Authors
 
