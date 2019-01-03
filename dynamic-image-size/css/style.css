@@ -1,0 +1,22 @@
+body {
+	width: 100%;
+	max-width: 768px;
+	font-family: 'Arial', sans-serif;
+	margin: 0 auto;
+	padding: 15px;
+	background: #eee;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+p {
+	font-size: 18px;
+	margin: 15px auto;
+	color: #333;
+}
+#about {
+	text-align: center; 
+	padding: 15px; 
+	margin-bottom: 15px;
+	background: #fefefe;
+}

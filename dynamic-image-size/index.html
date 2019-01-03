@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Dynamic Images By Ratio - JS Class</title>
+	<meta name="description" content="A javascript class that automatically sets the height of image containers when a `cover` style effect is needed with an inline img element. Uses a given ratio to set height dynamically based on image width.">
+	<meta name="author" content="Jim Kulakowski">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="css/style.css" />
+
+	<style>
+		/*-- Styles for Dynamic Images --*/
+		.image-container {
+			width: 100%;
+			display: relative; /* Make sure image containers are relative to accommodate absolutely positioned child img elements */
+			margin: 0 auto 15px;
+			background: #f7f7f7;
+		}
+		.image-container img {
+			width: 100%; /* Make sure to set your image width */
+		}
+
+		/*-- Additional image styles --*/
+		.round .image-container {
+			max-width: 600px;
+			-webkit-border-radius: 100%;
+			-moz-border-radius: 100%;
+			border-radius: 100%;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div id="about">
+		<h1>Dynamic Image Sizes By Ratio</h1>
+		<p><strong>A javascript class that automatically sets the height of image containers when a `cover` style effect is needed with an inline img element. Uses a given ratio to set height dynamically based on image width.</strong></p>
+		<p style="color: rgb(200, 0, 0);">* Resize screen width to see how each image maintains its aspect ratio and stays centered within its parent container.</p>
+	</div>
+
+	<div class="filmic">
+		<div class="image-container">
+			<img src="img/ai-artificial-intelligence-code-34676.jpg" alt="Computer and coffe mug" />
+		</div>
+		<div class="image-container">
+			<img src="img/adorable-animal-cat-1440387.jpg" alt="Cat paw on Macbook" />
+		</div>
+		<div class="image-container">
+			<img src="img/blur-capacitors-chip-825259.jpg" alt="Computer circuit board" />
+		</div>
+	</div>
+
+	<div class="round">
+		<div class="image-container">
+			<img src="img/ai-artificial-intelligence-code-34676.jpg" alt="Computer and coffe mug" />
+		</div>
+		<div class="image-container">
+			<img src="img/adorable-animal-cat-1440387.jpg" alt="Cat paw on Macbook" />
+		</div>
+		<div class="image-container">
+			<img src="img/blur-capacitors-chip-825259.jpg" alt="Computer circuit board" />
+		</div>
+	</div>
+
+</body>
+
+<!-- Import DynamicImagesByRatio javascript class -->
+<script src="js/DynamicImagesByRatio.js" type="text/javascript"></script>
+
+<script>
+	// Instantiate new objects to control images dynamically based on a 
+	// specific ratio. The `containerSelector` may be used to call a single
+	// image, or multiple images given a class, or ID.
+
+	// Instantiate a new onbject to display film-style images
+	var filmicDynamicImages = new DynamicImagesByRatio({
+		containerSelector: '.filmic .image-container',
+		ratio: {
+			width: 16, // 16:9 ratio
+			height: 9
+		},
+	});
+
+	// Instantiate a new object to display circular images
+	var circularDynamicImages = new DynamicImagesByRatio({
+		containerSelector: '.round .image-container',
+		ratio: {
+			width: 1, // 1:1 (square image contained within round container)
+			height: 1
+		},
+	});
+
+</script>
