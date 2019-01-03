@@ -19,7 +19,7 @@ Include the DynamicImagesByRatio.js class file somewhere within your HTML page. 
 ## Usage
 
 ### Build HTML
-Create a div container with any class you would like as well as a child ```img``` element.
+Create a ```div``` container with any class you would like as well as a child ```img``` element.
 
 ```
 <div class="image-container">
