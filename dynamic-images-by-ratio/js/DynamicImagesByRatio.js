@@ -38,8 +38,9 @@ function DynamicImagesByRatio(options) {
 			var image = imageContainers[i].querySelector('img');
 
 			image.style.minHeight = '100%';
+			image.style.height = '100%';
 			// image.style.minWidth = '100%';
-			// image.style.width = 'auto';
+			image.style.width = 'auto';
 			image.style.maxWidth = 'none';
 			image.style.position = 'absolute';
 			image.style.top = '50%';
