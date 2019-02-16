@@ -1,8 +1,8 @@
 /**
  * Dynamic Images By Ratio
  * -------------------------
- * A javascript class that allows the user to automatically set the height of
- * inline images based on their widths and a given ratio.
+ * A javascript class that transforms an image within a container into a
+ * background image with a cover-style effect, based on a given ratio.
  */ 
 function DynamicImagesByRatio(options) {
 
