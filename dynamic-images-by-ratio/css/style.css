@@ -14,6 +14,17 @@ p {
 	margin: 15px auto;
 	color: #333;
 }
+a {
+	text-decoration: none;
+}
+.btn, .btn:focus {
+	padding: 10px 30px;
+	color: #fff;
+	background: #010101cc;
+}
+.btn:hover {
+	background: #010101;
+}
 #about {
 	text-align: center; 
 	padding: 15px; 
