@@ -3,7 +3,7 @@
 	<meta charset="utf-8">
 
 	<title>Dynamic Images By Ratio - JS Class</title>
-	<meta name="description" content="A javascript class that allows the user to automatically set the height of inline images based on their widths and a given ratio.">
+	<meta name="description" content="A javascript class that transforms an image within a container into a background image with a cover-style effect, based on a given ratio.">
 	<meta name="author" content="Jim Kulakowski">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!--[if lt IE 9]>
@@ -18,31 +18,40 @@
 
 	<div id="about">
 		<h1>Dynamic Image Sizes By Ratio</h1>
-		<p><strong>A javascript class that automatically sets the height of inline images based on its width and a given ratio.</strong></p>
+		<p><strong>A javascript class that transforms an image within a container into a background image with a cover-style effect, based on a given ratio.</strong></p>
 		<p style="color: rgb(200, 0, 0);">* Resize screen width to see how each image maintains its aspect ratio and stays centered within its parent container.</p>
 	</div>
 
-	<div class="filmic">
+	<div class="original section">
+		<h2>Original</h2>
+		<img src="img/android-wallpaper-beach-foam-533923.jpg" alt="Beach Photo" style="width: 100%;" />
+	</div>
+
+	<div class="photo section">
+		<h2>Photo / 4:6</h2>
 		<div class="image-container">
-			<img src="img/ai-artificial-intelligence-code-34676.jpg" alt="Computer and coffe mug" />
-		</div>
-		<div class="image-container">
-			<img src="img/adorable-animal-cat-1440387.jpg" alt="Cat paw on Macbook" />
-		</div>
-		<div class="image-container">
-			<img src="img/blur-capacitors-chip-825259.jpg" alt="Computer circuit board" />
+			<img src="img/android-wallpaper-beach-foam-533923.jpg" alt="Beach Photo" />
 		</div>
 	</div>
 
-	<div class="round">
+	<div class="cinema section">
+		<h2>Cinema / 1.85:1</h2>
 		<div class="image-container">
-			<img src="img/ai-artificial-intelligence-code-34676.jpg" alt="Computer and coffe mug" />
+			<img src="img/android-wallpaper-beach-foam-533923.jpg" alt="Beach Photo" />
 		</div>
+	</div>
+
+	<div class="square section">
+		<h2>Square / 1:1</h2>
 		<div class="image-container">
-			<img src="img/adorable-animal-cat-1440387.jpg" alt="Cat paw on Macbook" />
+			<img src="img/android-wallpaper-beach-foam-533923.jpg" alt="Beach Photo" />
 		</div>
+	</div>
+
+	<div class="tall section">
+		<h2>Tall / 3:4</h2>
 		<div class="image-container">
-			<img src="img/blur-capacitors-chip-825259.jpg" alt="Computer circuit board" />
+			<img src="img/android-wallpaper-beach-foam-533923.jpg" alt="Beach Photo" />
 		</div>
 	</div>
 
@@ -56,21 +65,39 @@
 	// specific ratio. The `containerSelector` may be used to call a single
 	// image, or multiple images given a class, or ID.
 
-	// Instantiate a new object to display film-style images
+	// Instantiate a new object to display photo-style images
 	var filmicDynamicImages = new DynamicImagesByRatio({
-		containerSelector: '.filmic .image-container',
+		containerSelector: '.photo .image-container',
 		ratio: {
-			width: 16, // 16:9 ratio
-			height: 9
+			width: 6, // 6:4 ratio
+			height: 4
 		},
 	});
 
-	// Instantiate a new object to display circular images
-	var circularDynamicImages = new DynamicImagesByRatio({
-		containerSelector: '.round .image-container',
+	// Instantiate a new object to display film-style images
+	var cinemaDynamicImages = new DynamicImagesByRatio({
+		containerSelector: '.cinema .image-container',
 		ratio: {
-			width: 1, // 1:1 (square image contained within round container)
+			width: 1.85, // 1.85:1 ratio
 			height: 1
+		},
+	});
+
+	// Instantiate a new object to display square images
+	var squareDynamicImages = new DynamicImagesByRatio({
+		containerSelector: '.square .image-container',
+		ratio: {
+			width: 1, // 1:1
+			height: 1
+		},
+	});
+
+	// Instantiate a new object to display tall images
+	var tallDynamicImages = new DynamicImagesByRatio({
+		containerSelector: '.tall .image-container',
+		ratio: {
+			width: 3, // 3:4
+			height: 4
 		},
 	});
 

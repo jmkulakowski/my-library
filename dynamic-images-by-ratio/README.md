@@ -1,11 +1,8 @@
 # Dynamic Images By Ratio
 
-A javascript class that allows the user to automatically set the height of inline images based on their widths and a given ratio.
+A javascript class that transforms an image within a container into a background image with a cover-style effect, based on a given ratio.
 
 <a href="https://jmkulakowski.github.io/my-library/dynamic-images-by-ratio/" target="_blank">demo usage</a>
-
-*** **NOTE** ***
-*The class is currently only built to handle image containers that have widths higher than, or equal to, their heights. In other words, a 4:5 ratio would not be supported, but a 5:4 ratio would be. Equal widths and heights are also supported (i.e. 1:1).*
 
 ## Installation
 
@@ -44,21 +41,6 @@ Within some ```<script>``` tags, somewhere below where you imported the classes 
 	});
 </script>
 ```
-
-### Add CSS Styles
-Lastly, add some CSS to the ```head``` of your document, or within an external stylehseet, to set some initial styles for your new, dynamic image. 
-
-```
-<style>
-	.image-container {
-		display: relative;
-	}
-	.image-container img {
-		width: 100%;
-	}
-</style>
-```
-*** **IMPORTANT NOTE** *** It's critical that the image container's display property is set to "relative" and that your image has a set width. The child image within the container will be absolutely positioned and the image container's height will be resized based on the child image's width.
 
 ## Authors
 

@@ -26,30 +26,67 @@ function DynamicImagesByRatio(options) {
 		// Get a reference to all elements and set ratio
 		var imageContainers = document.querySelectorAll(this.containerSelector);
 
-		for(var i = 0; i < imageContainers.length; i++) {		
-			// Resize the image container and hide overflown images
-			imageContainers[i].style.height = imageContainers[i].offsetWidth * this.ratio.height / this.ratio.width + 'px';
-			imageContainers[i].style.display = 'block';
-			imageContainers[i].style.position = 'relative';
-			imageContainers[i].style.overflow = 'hidden';
+		for(var i = 0; i < imageContainers.length; i++) {
 
-			// Make sure the image fills the entire container and position
-			// it absolutely in the center.
-			var image = imageContainers[i].querySelector('img');
+			// Get a reference to the image and its container
+			var container = imageContainers[i];
+			var image = container.querySelector('img');
 
-			image.style.minHeight = '100%';
-			image.style.height = '100%';
-			// image.style.minWidth = '100%';
-			image.style.width = 'auto';
-			image.style.maxWidth = 'none';
+			// Set some initial CSS styles to make sure the image is at least
+			// as wide as the container.
+			image.style.display = 'block';
+			image.style.width = '100%';
+			image.style.height = 'auto';
 			image.style.position = 'absolute';
 			image.style.top = '50%';
 			image.style.left = '50%';
 			image.style.webkitTransform = 'translateX(-50%) translateY(-50%)';
 			image.style.mozTransform = 'translateX(-50%) translateY(-50%)';
 			image.style.transform = 'translateX(-50%) translateY(-50%)';
+
+			// Determine the aspect ratio of the image and use results to 
+			// make sure the image covers the entire container.
+			imageContainers[i].style.height = imageContainers[i].offsetWidth * this.ratio.height / this.ratio.width + 'px';
+			imageContainers[i].style.display = 'block';
+			imageContainers[i].style.position = 'relative';
+			imageContainers[i].style.overflow = 'hidden';
+
+			var containerSize = this.getWidthAndHeight(container);
+			var imageSize = this.getWidthAndHeight(image);
+
+			// Check the height
+			if( imageSize.height < containerSize.height ) {
+				image.style.width = 'auto';
+				image.style.height = '100%';
+			}
+
+			// Check the width
+			if( imageSize.width < containerSize.width ) {
+				
+				var difference = containerSize.width - imageSize.width;
+				
+				// Get updated values
+				imageSize = this.getWidthAndHeight(image);
+
+				// Resize the image to fit within the container
+				image.style.width = imageSize.width + difference;
+				image.style.height = imageSize.height + difference;
+			}
+
 		}
 
+	}
+
+	// Get the pixel width and height of an element
+	this.getWidthAndHeight = function(element) {
+		var sizes = {
+			width: element.clientWidth || element.offsetWidth || element.scrollWidth,
+			height: element.clientHeight || element.offsetHeight || element.scrollHeight
+		}
+		console.log(element.tagName.toLowerCase() + '.' + element.classList[0] + ' - w:' + sizes.width + ' / h:' + sizes.height);
+		console.log('- - -');
+
+		return sizes;
 	}
 
 }

@@ -21,20 +21,25 @@ p {
 	background: #fefefe;
 }
 /*-- Styles for Dynamic Images --*/
-.image-container {
-	width: 100%;
-	display: relative; /* Make sure image containers are relative to accommodate absolutely positioned child img elements */
-	margin: 0 auto 15px;
+.section {
+	padding: 5px 15px 15px;
 	background: #f7f7f7;
 }
-.image-container img {
-	width: 100%; /* Make sure to set your image width */
+.section:not(:last-child) {
+	margin-bottom: 15px;
+}
+.image-container {
+	width: 100%;
+	margin: 0 auto;
+}
+.image-container:not(:last-child) {
+	margin-bottom: 15px;
 }
 
 /*-- Additional image styles --*/
 .round .image-container {
 	max-width: 600px;
-	-webkit-border-radius: 100%;
-	-moz-border-radius: 100%;
-	border-radius: 100%;
+	-webkit-border-radius: 300px;
+	-moz-border-radius: 300px;
+	border-radius: 300px;
 }
