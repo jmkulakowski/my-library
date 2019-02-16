@@ -83,8 +83,8 @@ function DynamicImagesByRatio(options) {
 			width: element.clientWidth || element.offsetWidth || element.scrollWidth,
 			height: element.clientHeight || element.offsetHeight || element.scrollHeight
 		}
-		console.log(element.tagName.toLowerCase() + '.' + element.classList[0] + ' - w:' + sizes.width + ' / h:' + sizes.height);
-		console.log('- - -');
+		// console.log(element.tagName.toLowerCase() + '.' + element.classList[0] + ' - w:' + sizes.width + ' / h:' + sizes.height);
+		// console.log('- - -');
 
 		return sizes;
 	}
